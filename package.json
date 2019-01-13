@@ -1,0 +1,21 @@
+{
+  "name": "api-structure",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "prestart": "eslint --fix --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "bcrypt": "^3.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.2.0",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "multer": "^1.3.0"
+  }
+}

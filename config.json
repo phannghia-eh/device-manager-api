@@ -1,0 +1,13 @@
+{
+    "default_connect_string": "mongodb://localhost:27017/trex-device-manager",
+    "default_access_token": "",
+    "database_prefix": "",
+    "use_database": true,
+    "jwt_secret_key": "",
+    "upload_path": "upload/",
+    "allow_origin_host": "*",
+    "enable_morgan": true,
+    "listen_interface": "0.0.0.0",
+    "listen_port": 3000,
+    "useSocket": false
+}
