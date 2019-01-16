@@ -32,6 +32,31 @@ class DeviceController {
         next(global.ApiException.ErrorCode.unknown_error)
     }
   }
+
+  static async importDevices(req, res, next) {
+    try {
+      let success = [], fail = [], result = {}
+      const listDevices = req.body.devices
+
+      for (let device of listDevices) {
+        try {
+          const result = await DeviceService.create(device)
+          if (result)
+            success.push(device)
+        } catch (err) {
+          if (err.code === 11000)
+            fail.push(device)
+        }
+      }
+
+      result.success = success
+      result.fail = fail
+
+      next(new global.ApiResponseObject({data: result, message: 'Import Done'}))
+    } catch (err) {
+      next(global.ApiException.ErrorCode.unknown_error)
+    }
+  }
 }
 
 module.exports = DeviceController

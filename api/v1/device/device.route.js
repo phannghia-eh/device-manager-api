@@ -5,6 +5,9 @@ router.route('/')
   .get(DeviceController.findAllDevice)
   .post(DeviceController.addDevice)
 
+router.route('/import')
+  .post(DeviceController.importDevices)
+
 router.route('/:deviceId')
   .put(DeviceController.updateDeviceById)
 
